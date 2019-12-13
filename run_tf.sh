@@ -8,17 +8,17 @@ j=$2
 case $3 in
  [1]*)
 rm initial* tabletf* dens.* \#* SOL.dens_s*.xvg
-gmx grompp -f md.mdp -c conf.gro -p ../../build/adress-topol.top -n index.ndx
-./tf_calc.sh 0 s0
+gmx grompp -f md.mdp -c conf.gro -p ../../../build/adress-topol.top -n index.ndx
+./calc_tf.sh 0 s0
 
 for z in `seq $i $j`; do
-./tf_calc.sh 1 s$z
+./calc_tf.sh 1 s$z
 done
 
 ;;
  [2]*)
 for z in `seq $i $j`; do
-./tf_calc.sh 1 s$z
+./calc_tf.sh 1 s$z
 done
 
 ;;
